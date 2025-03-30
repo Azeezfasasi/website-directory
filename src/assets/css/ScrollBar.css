@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    /* overflow-y: hidden; */
+}
+
+.tenant-scroll {
+    overflow-y: scroll;
+  }
+  
+  /* Target only this div's scrollbar */
+ ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #189f06;
+    border-radius: 10px;
+  }
+  
+  .tenant-scroll::-webkit-scrollbar-track {
+    background: rgb(255, 196, 0);
+  }
+  
+
+  
