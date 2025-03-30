@@ -14,7 +14,7 @@ const TenantApps = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/tenant-categories");
+        const response = await axios.get("https://app-directory-backend.onrender.com/api/tenant-categories");
         setCategories(response.data);
         setLoading(false);
       } catch (err) {
@@ -39,7 +39,7 @@ const TenantApps = () => {
   
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/tenants?categoryId=${tenantCategoryId}`
+        `https://app-directory-backend.onrender.com/api/tenants?categoryId=${tenantCategoryId}`
       );
       setTenants(response.data);
     } catch (err) {
@@ -53,7 +53,7 @@ const TenantApps = () => {
     setSelectedTenant(tenantId);
   
     try {
-      const response = await axios.get(`http://localhost:5000/api/apps/${tenantId}`);
+      const response = await axios.get(`https://app-directory-backend.onrender.com/api/apps/${tenantId}`);
       setApps(response.data);
     } catch (err) {
       setError("Failed to fetch apps");

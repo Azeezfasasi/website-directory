@@ -15,7 +15,7 @@ const AddTenantApp = () => {
   useEffect(() => {
     const fetchTenants = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/tenants");
+        const response = await axios.get("https://app-directory-backend.onrender.com/api/tenants");
         setTenants(response.data);
       } catch (error) {
         console.error("Error fetching tenants:", error);

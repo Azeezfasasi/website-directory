@@ -13,7 +13,7 @@ const AddTenant = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/tenant-categories");
+        const response = await axios.get("https://app-directory-backend.onrender.com/api/tenant-categories");
         setTenantCategory(response.data);
       } catch (error) {
         console.error("Error fetching tenant categories:", error);

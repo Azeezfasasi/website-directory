@@ -31,7 +31,7 @@ export const ProfileProvider = ({ children }) => {
     const loadUser = async () => {
       if (token && !user) {
         try {
-          const response = await axios.get("http://localhost:5000/api/profiles/me");
+          const response = await axios.get("https://app-directory-backend.onrender.com/api/profiles/me");
           setUser(response.data);
         } catch (error) {
           logout();
@@ -47,7 +47,7 @@ export const ProfileProvider = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.post(
-        "http://localhost:5000/api/profiles/register",
+        "https://app-directory-backend.onrender.com/api/profiles/register",
         profileData
       );
       setUser(response.data.user);
@@ -66,7 +66,7 @@ export const ProfileProvider = ({ children }) => {
     try {
       setLoading(true);      
       const response = await axios.post(
-        "http://localhost:5000/api/profiles/login",
+        "https://app-directory-backend.onrender.com/api/profiles/login",
         credentials
       );
       
@@ -86,7 +86,7 @@ export const ProfileProvider = ({ children }) => {
   const fetchProfile = async (userId) => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/profiles/${userId}`);
+      const response = await axios.get(`https://app-directory-backend.onrender.com/api/profiles/${userId}`);
       setUser(response.data);
       return response.data;
     } catch (error) {
@@ -100,7 +100,7 @@ export const ProfileProvider = ({ children }) => {
   const updateProfile = async (userId, profileData) => {
     try {
       setLoading(true);
-      const response = await axios.put(`http://localhost:5000/api/profiles/${userId}`, profileData);
+      const response = await axios.put(`https://app-directory-backend.onrender.com/api/profiles/${userId}`, profileData);
       setUser(response.data.updatedProfile);
       return response.data;
     } catch (error) {
@@ -114,7 +114,7 @@ export const ProfileProvider = ({ children }) => {
   const deleteProfile = async (userId) => {
     try {
       setLoading(true);
-      await axios.delete(`http://localhost:5000/api/profiles/${userId}`);
+      await axios.delete(`https://app-directory-backend.onrender.com/api/profiles/${userId}`);
       logout();
     } catch (error) {
       throw error.response?.data || error.message;

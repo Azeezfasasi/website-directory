@@ -5,7 +5,7 @@ const TenantAppContext = createContext();
 
 export const useTenantApp = () => useContext(TenantAppContext);
 
-const API_URL = "http://localhost:5000/api/apps";
+const API_URL = "https://app-directory-backend.onrender.com/api/apps";
 
 export const TenantAppProvider = ({ children }) => {
   const [apps, setApps] = useState([]);

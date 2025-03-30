@@ -5,7 +5,7 @@ const TenantCategoryContext = createContext();
 
 export const useTenantCategory = () => useContext(TenantCategoryContext);
 
-const API_URL = "http://localhost:5000/api/tenant-categories";
+const API_URL = "https://app-directory-backend.onrender.com/api/tenant-categories";
 
 export const TenantCategoryProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
@@ -28,7 +28,7 @@ export const TenantCategoryProvider = ({ children }) => {
   // Add a new category
 const addCategory = async (categoryData) => {
     try {
-      const response = await axios.post("http://localhost:5000/api/tenant-categories", categoryData, {
+      const response = await axios.post("https://app-directory-backend.onrender.com/api/tenant-categories", categoryData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -48,7 +48,7 @@ const addCategory = async (categoryData) => {
     }
   
     try {
-      const response = await axios.put(`http://localhost:5000/api/tenant-categories/${id}`, data);
+      const response = await axios.put(`https://app-directory-backend.onrender.com/api/tenant-categories/${id}`, data);
       console.log("Update response:", response.data);
     } catch (error) {
       console.error("Update error:", error.response?.data || error.message);

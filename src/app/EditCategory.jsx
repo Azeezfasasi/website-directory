@@ -10,14 +10,14 @@ const EditCategory = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/tenant-categories/${id}`)
+      .get(`https://app-directory-backend.onrender.com/api/tenant-categories/${id}`)
       .then((res) => setName(res.data.name))
       .catch((err) => console.error("Error fetching category:", err));
   }, [id]);
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`http://localhost:5000/api/tenant-categories/${id}`, {
+      await axios.put(`https://app-directory-backend.onrender.com/api/tenant-categories/${id}`, {
         name: name,
       });
       alert("Category updated successfully!");

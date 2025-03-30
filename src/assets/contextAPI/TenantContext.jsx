@@ -11,7 +11,7 @@ export const TenantProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_URL = 'http://localhost:5000/api/tenants';
+  const API_URL = 'https://app-directory-backend.onrender.com/api/tenants';
 
   // Fetch all tenants
   const fetchTenants = async () => {

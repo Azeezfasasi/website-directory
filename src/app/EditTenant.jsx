@@ -11,7 +11,7 @@ const EditTenant = () => {
   // Fetch single tenant
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/tenants/${id}`)
+      .get(`https://app-directory-backend.onrender.com/api/tenants/${id}`)
       .then((res) => setTenant(res.data))
       .catch((err) => console.error("Error fetching tenant:", err));
   }, [id]);
@@ -20,7 +20,7 @@ const EditTenant = () => {
 const handleUpdate = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/tenants/${id}`,
+        `https://app-directory-backend.onrender.com/api/tenants/${id}`,
         { name: tenant.name, description: tenant.description }, // Ensure correct data format
         { headers: { "Content-Type": "application/json" } }
       );
