@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const EditCategory = () => {
   const { id } = useParams();
@@ -29,6 +30,10 @@ const EditCategory = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Edit Category | Website Directory</title>
+      <meta name="description" content="Update and manage website category details." />
+    </Helmet>
       <Header />
       <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">

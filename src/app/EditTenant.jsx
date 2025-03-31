@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const EditTenant = () => {
   const { id } = useParams(); // Get Tenant ID from URL
@@ -38,6 +39,10 @@ const handleUpdate = async () => {
 
   return (
     <>
+    <Helmet>
+      <title>Edit Websites | Website Directory</title>
+      <meta name="description" content="Modify website type classifications" />
+    </Helmet>
       <Header />
       <div className="flex items-start lg:items-center justify-center min-h-screen bg-gray-100 p-4">
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">

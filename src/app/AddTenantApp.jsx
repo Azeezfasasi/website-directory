@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTenantApp } from "../assets/contextAPI/AppContext";
 import axios from "axios";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const AddTenantApp = () => {
   const { createApp, loading, error } = useTenantApp();
@@ -46,6 +47,10 @@ const AddTenantApp = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Add Apps | Website Directory</title>
+      <meta name="description" content="Register new applications in the directory." />
+    </Helmet>
     <Header />
     <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-lg">
       <h2 className="text-2xl font-semibold mb-6">Add New App</h2>

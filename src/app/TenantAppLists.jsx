@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useTenantApp } from "../assets/contextAPI/AppContext";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const TenantAppList = () => {
   const { tenantId, name } = useParams(); // Get tenantId from URL
@@ -16,11 +17,15 @@ const TenantAppList = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Website Apps | Website Directory</title>
+      <meta name='description' content='Browse and manage different website types' />
+    </Helmet>
       <Header />
       <div className="max-w-5xl mx-auto p-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-            Apps for Tenant 
+            Apps for Website
           </h1>
           <Link
             to="/app/addtenantapp" // Pass tenantId when adding new app

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTenant } from '../assets/contextAPI/TenantContext';
 import Header from '../assets/component/Header';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const AddTenant = () => {
   const [name, setName] = useState('');
@@ -44,6 +45,10 @@ const AddTenant = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Add Website | Website Directory</title>
+      <meta name="description" content="Define and categorize different types of websites." />
+    </Helmet>
     <Header />
     <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4">Create New Website Type</h2>

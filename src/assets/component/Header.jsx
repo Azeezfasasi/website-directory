@@ -28,7 +28,17 @@ function Header() {
             </div>
             <div className="flex flex-row items-center justify-center m-auto lg:m-0 lg:justify-start lg:mr-[30px]">
                 <div className="text-white">
+                {user?.role === "Admin" && (
                     <h3 className='text-white text-[17.6px] font-[400]'>{user.name}</h3>
+                )}
+
+                {user?.role === "Viewer" && (
+                    <>
+                    <Link to="/app/profiledetails">
+                        <h3 className='text-white text-[17.6px] font-[400]'><i className="fa-regular fa-circle-user"></i> {user.name}</h3>
+                    </Link>
+                    </>
+                )}
                 </div>
                 {user?.role === "Admin" && (
                 <div className='px-4'>

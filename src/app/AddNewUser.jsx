@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useProfile } from "../assets/contextAPI/ProfileContext";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const AddNewUser = () => {
   const { addUserByAdmin } = useProfile();
@@ -36,6 +37,9 @@ const AddNewUser = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Add Users | Website Directory</title>
+    </Helmet>
     <Header />
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6">
       <h2 className="text-xl font-bold mb-4">Add New User</h2>

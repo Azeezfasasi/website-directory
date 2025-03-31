@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useProfile } from "../assets/contextAPI/ProfileContext";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { registerProfile, loading } = useProfile();
@@ -35,6 +36,11 @@ const Register = () => {
   }; 
 
   return (
+    <>
+    <Helmet>
+      <title>Register | Website Directory</title>
+      <meta name='description' content='Welcome to Website Directory!' />
+    </Helmet>
     <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
@@ -84,6 +90,7 @@ const Register = () => {
 
       </div>
     </div>
+    </>
   );
 };
 

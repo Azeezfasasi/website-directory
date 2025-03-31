@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const EditUserDetails = () => {
   const { id } = useParams();
@@ -42,6 +43,10 @@ const EditUserDetails = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Edit User Details | Website Directory</title>
+      <meta name="description" content="Update user information and permissions" />
+    </Helmet>
       <Header />
       <div className="max-w-lg mx-auto mt-10 bg-white p-6 shadow-lg rounded-lg">
         <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Edit User</h2>

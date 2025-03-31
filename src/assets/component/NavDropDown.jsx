@@ -40,37 +40,37 @@ const NavDropdownMenu = () => {
         <div className="absolute left-0 lg:left-[-30px] right-0 lg:right-7 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg animate-fadeIn z-[9999]">
           <ul className="py-2">
             <li>
-              <Link to="/app/home" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Website Directory</Link>
+              <Link to="/app/home" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-regular fa-folder"></i> Website Directory</Link>
             </li>
             <li>
-              <Link to="/app/tenantcategorylists" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Website Categories</Link>
+              <Link to="/app/tenantcategorylists" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-list"></i> Website Categories</Link>
             </li>
             <li>
-              <Link to="/app/addtenantcategory" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Add a Website Category</Link>
+              <Link to="/app/addtenantcategory" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-plus"></i> Add a Website Category</Link>
             </li>
             <li>
-              <Link to="/app/tenantLists" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Website Types</Link>
+              <Link to="/app/tenantLists" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-globe"></i> Website Types</Link>
             </li>
             <li>
-              <Link to="/app/addtenant" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Add Website Type</Link>
+              <Link to="/app/addtenant" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-plus"></i> Add Website Type</Link>
             </li>
             <li>
-              <Link to="/app/tenantapps" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">All Apps</Link>
+              <Link to="/app/tenantapps" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-shapes"></i> All Apps</Link>
             </li>
             <li>
-              <Link to="/app/addtenantapp" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Create Apps</Link>
+              <Link to="/app/addtenantapp" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-plus"></i> Create Apps</Link>
             </li>
             <li>
-              <Link to="/app/profiledetails" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Profile Details</Link>
+              <Link to="/app/profiledetails" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-regular fa-circle-user"></i> Profile Details</Link>
             </li>
             <li>
-              <Link to="/app/manageusers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Manage Users</Link>
+              <Link to="/app/manageusers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-users"></i> Manage Users</Link>
             </li>
             <li>
-              <Link to="/app/addnewuser" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Add a New User</Link>
+              <Link to="/app/addnewuser" className="block px-4 py-2 text-gray-800 hover:bg-gray-100"><i className="fa-solid fa-user-plus"></i> Add a New User</Link>
             </li>
             <li>
-              <div onClick={handleLogout} className="block px-4 py-2 text-red-600 hover:bg-gray-100 cursor-pointer">Logout</div>
+              <div onClick={handleLogout} className="block px-4 py-2 text-red-600 hover:bg-gray-100 cursor-pointer"><i className="fa-solid fa-arrow-right-from-bracket"></i> Logout</div>
             </li>
           </ul>
         </div>

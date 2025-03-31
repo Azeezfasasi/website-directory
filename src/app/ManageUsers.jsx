@@ -3,6 +3,7 @@ import { useProfile } from "../assets/contextAPI/ProfileContext";
 import axios from "axios";
 import Header from "../assets/component/Header";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const ManageUsers = () => {
   const { updateProfile, deleteProfile } = useProfile();
@@ -73,6 +74,10 @@ const ManageUsers = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Manage Users | Website Directory</title>
+      <meta name='description' content='View, edit, and manage all user accounts.' />
+    </Helmet>
       <Header />
       <div className="max-w-6xl mx-auto p-6">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-6">

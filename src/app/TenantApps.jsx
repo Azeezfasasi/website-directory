@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTenantApp } from "../assets/contextAPI/AppContext";
 import Header from "../assets/component/Header";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const TenantApps = () => {
   const { apps, fetchApps, updateApp, deleteApp } = useTenantApp();
@@ -17,6 +18,10 @@ const TenantApps = () => {
 
   return (
     <>
+    <Helmet>
+      <title>All Apps | Website Directory</title>
+      <meta name='description' content='Display a comprehensive list of all applications in the directory.' />
+    </Helmet>
       <Header />
       <div className="max-w-5xl mx-auto p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">

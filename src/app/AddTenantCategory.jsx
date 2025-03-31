@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTenantCategory } from "../assets/contextAPI/TenantCategoryContext";
 import Header from "../assets/component/Header";
+import { Helmet } from "react-helmet";
 
 const AddTenantCategory = () => {
   const { addCategory, loading, error } = useTenantCategory();
@@ -21,6 +22,10 @@ const handleSubmit = async (e) => {
 
   return (
     <>
+    <Helmet>
+      <title>Add Website Category | Website Directory</title>
+      <meta name="description" content="Organize websites into relevant categories." />
+    </Helmet>
     <Header />
     <div className="max-w-lg my-auto mx-auto bg-white shadow-lg rounded-2xl p-8 mt-[10px] lg:mt-[40px]">
       <h2 className="text-2xl font-semibold mb-6">Add New Website Category</h2>

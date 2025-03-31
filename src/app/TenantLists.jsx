@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import Header from "../assets/component/Header";
 import { useTenant } from "../assets/contextAPI/TenantContext";
+import { Helmet } from "react-helmet";
 
 const TenantList = () => {
   const { tenants, fetchTenantApps, deleteTenant } = useTenant();
 
   return (
     <>
+    <Helmet>
+      <title>Website List| Website Directory</title>
+      <meta name='description' content='Browse and manage different website types.' />
+    </Helmet>
       <Header />
       <div className="max-w-5xl mx-auto p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">

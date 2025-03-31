@@ -7,7 +7,8 @@ function Home() {
   return (
     <>
     <Helmet>
-      <title>Apps | Apps Directory</title>
+      <title>Web Apps | Website Directory</title>
+      <meta name='description' content='View the directory overview and latest updates.' />
     </Helmet>
     <Header />
     <TenantApps />

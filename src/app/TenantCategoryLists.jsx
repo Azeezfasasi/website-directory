@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../assets/component/Header";
 import { useTenantCategory } from "../assets/contextAPI/TenantCategoryContext";
+import { Helmet } from "react-helmet";
 
 const TenantCategoryLists = () => {
   const { categories, deleteCategory, loading, error } = useTenantCategory();
@@ -13,6 +14,10 @@ const TenantCategoryLists = () => {
 
   return (
     <>
+    <Helmet>
+      <title>Website Categories| Website Directory</title>
+      <meta name='description' content='Access and organize website categories.' />
+    </Helmet>
       <Header />
       <div className="max-w-4xl mx-auto p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">

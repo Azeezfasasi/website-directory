@@ -114,9 +114,9 @@ const Login = () => {
   return (
     <>
       <Helmet>
-        <title>Login | App Director</title>
-        <meta name="description" content="Welcome to Application Directory!" />
-        <meta name="keywords" content="App, Directory, SEO, Meta Tags" />
+        <title>Login | Website Director</title>
+        <meta name="description" content="Welcome to Website Directory!" />
+        <meta name="keywords" content="App, website Directory, SEO, Meta Tags" />
       </Helmet>
 
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
