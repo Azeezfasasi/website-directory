@@ -41,23 +41,25 @@ useEffect(() => {
         <h2 className="text-2xl font-bold text-center mb-6">Edit App</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block font-medium">Name</label>
+            <label className="block font-medium">App Name</label>
             <input
               type="text"
               name="name"
               value={appData.name}
               onChange={handleChange}
               className="w-full p-2 border rounded"
+              placeholder="Enter app name"
               required
             />
           </div>
           <div>
-            <label className="block font-medium">Description</label>
+            <label className="block font-medium">App Description</label>
             <textarea
               name="description"
               value={appData.description}
               onChange={handleChange}
               className="w-full p-2 border rounded"
+              placeholder="Enter app description"
               required
             />
           </div>
@@ -69,6 +71,7 @@ useEffect(() => {
               value={appData.link}
               onChange={handleChange}
               className="w-full p-2 border rounded"
+              placeholder="https://"
               required
             />
           </div>

@@ -41,22 +41,22 @@ const handleUpdate = async () => {
       <Header />
       <div className="flex items-start lg:items-center justify-center min-h-screen bg-gray-100 p-4">
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-          <h2 className="text-2xl font-bold text-gray-700 mb-4">Edit Tenant</h2>
+          <h2 className="text-2xl font-bold text-gray-700 mb-4">Edit Website</h2>
           <div className="mb-4">
             <label className="block text-gray-600 text-sm font-medium mb-1">
-              Tenant Name
+              Website Name
             </label>
             <input
               type="text"
               value={tenant.name}
               onChange={(e) => setTenant({ ...tenant, name: e.target.value })}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter tenant name"
+              placeholder="Enter website name"
             />
           </div>
           <div className="mb-4">
             <label className="block text-gray-600 text-sm font-medium mb-1">
-              Description
+              Website Description
             </label>
             <textarea
               value={tenant.description}
@@ -64,14 +64,14 @@ const handleUpdate = async () => {
                 setTenant({ ...tenant, description: e.target.value })
               }
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Enter tenant description"
+              placeholder="Enter website description"
             />
           </div>
           <button
             onClick={handleUpdate}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 rounded-lg transition-all duration-300"
           >
-            Update Tenant
+            Update Website
           </button>
         </div>
       </div>

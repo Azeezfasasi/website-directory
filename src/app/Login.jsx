@@ -150,7 +150,7 @@ const Login = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
               required
             />
           </div>
@@ -164,14 +164,20 @@ const Login = () => {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:outline-none"
               required
             />
+          </div>
+          <div className="text-left mt-0 mb-3 text-sm text-gray-600">
+            Forgot password?{" "}
+            <Link to="" className="text-green-500 hover:underline">
+              Reset
+            </Link>
           </div>
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white font-medium py-2 rounded-lg hover:bg-green-700 transition disabled:bg-gray-400"
+            className="w-full bg-green-600 text-white font-medium py-2 rounded-lg hover:bg-green-700 transition disabled:bg-gray-400 cursor-pointer"
             disabled={loading}
           >
             {loading ? "Logging in..." : "Login"}

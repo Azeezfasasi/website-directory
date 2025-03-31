@@ -49,20 +49,20 @@ const AddTenant = () => {
       <h2 className="text-2xl font-semibold mb-4">Create New Website Type</h2>
       <form onSubmit={handleSubmit}>
         <label className="block mb-4">
-          <span className="block text-sm font-medium text-gray-700">Tenant Name:</span>
+          <span className="block text-sm font-medium text-gray-700">Website Name:</span>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="mt-1 block w-full p-2 border rounded-md"
-            placeholder="Enter tenant name"
+            placeholder="Enter website name"
             required
           />
         </label>
 
         <label className="block mb-4">
           <span className="block text-sm font-medium text-gray-700">Tenant Description:</span>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="mt-1 block w-full p-2 border rounded-md" placeholder='Enter a description' required></textarea>
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} className="mt-1 block w-full p-2 border rounded-md" placeholder='Enter website description' required></textarea>
         </label>
 
         <div>
@@ -86,7 +86,7 @@ const AddTenant = () => {
           type="submit"
           className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition mt-4 cursor-pointer"
         >
-          Create Tenant
+          Add Website
         </button>
       </form>
     </div>

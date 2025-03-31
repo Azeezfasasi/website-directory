@@ -80,7 +80,7 @@ const TenantApps = () => {
               onClick={() => handleCategoryClick(category._id)}
             >
               {category.name}
-              <span>➤</span>
+              <i className="fa-solid fa-chevron-right"></i>
             </li>
           ))}
         </ul>
@@ -105,15 +105,15 @@ const TenantApps = () => {
                     <p className="font-[700] cursor-pointer text-[17px] w-[90%]">{tenant.name}</p>
                     <p className="text-[13px] font-normal text-inherit mt-[3px] mb-[30px] w-[90%]">{tenant.description}</p>
                   </div>
-                  <span>➤</span>
+                  <i className="fa-solid fa-chevron-right"></i>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-gray-500 italic">No tenants available</p>
+            <p className="text-gray-500 italic">No websites available for this category</p>
           )
         ) : (
-          <p className="text-gray-500 italic">← Select a tenant category from the list</p>
+          <p className="text-gray-500 italic"><i className="fa-solid fa-arrow-left"></i> Select a website category from the list</p>
         )}
       </div>
 
@@ -135,16 +135,16 @@ const TenantApps = () => {
                       <p className="font-bold">{app.name}</p>
                       <p className="text-sm">{app.description}</p>
                     </div>
-                    <span>➤</span>
+                    <i className="fa-solid fa-chevron-right"></i>
                   </a>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-gray-500 italic">No apps available</p>
+            <p className="text-gray-500 italic">No apps available for this website</p>
           )
         ) : (
-          <p className="text-gray-500 italic">← Select a tenant from the list</p>
+          <p className="text-gray-500 italic"><i className="fa-solid fa-arrow-left"></i> Select a website type from the list</p>
         )}
       </div>
     </div>

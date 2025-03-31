@@ -16,35 +16,35 @@ function LoginCopy() {
   
 
   return (
-    <div className="w-full max-w-sm bg-white shadow-lg border border-gray-200 rounded-lg p-2 mt-6 text-center">
+    <div className="w-full max-w-sm bg-white shadow-lg border border-gray-200 rounded-lg p-2 mt-6 text-left z-[9999]">
       <h3 className="text-lg font-semibold text-gray-700 mb-2">Use these demo credentials for testing</h3>
 
       {/* Username Section */}
       <div className="mb-4">
-        <p className="text-gray-600 font-medium">
+        <p className="text-green-600 font-medium">
           Username: <span className="font-normal text-black">demo@webdirectory.com</span>
         </p>
         <button
-          onClick={() => copyToClipboard("admin", setCopySuccess)}
+          onClick={() => copyToClipboard("demo@webdirectory.com", setCopySuccess)}
           className="mt-2 bg-green-600 text-white text-sm px-4 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer"
         >
           Copy Username
         </button>
-        {copySuccess && <span className="block text-sm text-blue-600 mt-2">{copySuccess}</span>}
+        {copySuccess && <span className="block text-sm text-green-600 mt-2">{copySuccess}</span>}
       </div>
 
       {/* Password Section */}
       <div>
-        <p className="text-gray-600 font-medium">
+        <p className="text-green-600 font-medium">
           Password: <span className="font-normal text-black">demo1234</span>
         </p>
         <button
-          onClick={() => copyToClipboard("pass1234", setCopyPasswordSuccess)}
-          className="mt-2 bg-green-600 text-white text-sm px-4 py-1 rounded-lg hover:bg-green-700 transition"
+          onClick={() => copyToClipboard("demo1234", setCopyPasswordSuccess)}
+          className="mt-2 bg-green-600 text-white text-sm px-4 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer"
         >
           Copy Password
         </button>
-        {copyPasswordSuccess && <span className="block text-sm text-blue-600 mt-2">{copyPasswordSuccess}</span>}
+        {copyPasswordSuccess && <span className="block text-sm text-green-600 mt-2">{copyPasswordSuccess}</span>}
       </div>
     </div>
   );

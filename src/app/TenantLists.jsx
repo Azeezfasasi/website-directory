@@ -10,7 +10,7 @@ const TenantList = () => {
       <Header />
       <div className="max-w-5xl mx-auto p-6">
         <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-6">
-          Tenant List
+          Website List
         </h2>
 
         {/* Tenants Grid */}

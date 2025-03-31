@@ -63,7 +63,7 @@ const AddTenantApp = () => {
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Description</label>
+          <label className="block text-sm font-medium">App Description</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
@@ -96,7 +96,7 @@ const AddTenantApp = () => {
             value={link}
             onChange={(e) => setLink(e.target.value)}
             className="mt-1 p-2 w-full border rounded-lg"
-            placeholder="Enter app description"
+            placeholder="https://"
           />
         </div>
 

@@ -13,7 +13,7 @@ const ButtomBuy = () => {
         rel="noopener noreferrer"
         className="block lg:hidden fixed top-[160px] right-0 transform -translate-y-1/2 bg-[#ff6600] text-white px-4 py-2 rounded-l-lg shadow-lg text-sm font-semibold hover:bg-[#cc5200] transition-all animate-bounce"
       >
-        <i class="fa-solid fa-cart-shopping"></i> Buy This Web Template
+        <i className="fa-solid fa-cart-shopping"></i> Buy This Web Template
       </a>
 
       {/* For large screen */}
@@ -23,7 +23,7 @@ const ButtomBuy = () => {
         rel="noopener noreferrer"
         className="hidden lg:block fixed top-1/2 right-0 transform -translate-y-1/2 bg-[#ff6600] text-white px-4 py-2 rounded-l-lg shadow-lg text-sm font-semibold hover:bg-[#cc5200] transition-all animate-bounce"
       >
-        <i class="fa-solid fa-cart-shopping"></i> Buy This Web Template
+        <i className="fa-solid fa-cart-shopping"></i> Buy This Web Template
       </a>
     </>
   );
