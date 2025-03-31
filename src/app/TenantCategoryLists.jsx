@@ -38,14 +38,17 @@ const TenantCategoryLists = () => {
 
         {/* Category List */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((category) => (
+          {categories
+          .slice()
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((category) => (
             <div 
               key={category._id} 
               className="p-4 border rounded-lg shadow-sm bg-white dark:bg-gray-800 transition hover:shadow-md"
             >
               <h3 className="text-lg font-semibold text-gray-700 dark:text-white">{category.name}</h3>
               
-              {/* Action Buttons */}
+
               <div className="mt-3 flex gap-2">
                 <button onClick={() => handleEdit(category._id)} className="px-3 py-1 bg-green-500 text-white text-sm rounded-md hover:bg-green-600 transition cursor-pointer">Edit</button>
                 

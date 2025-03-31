@@ -71,7 +71,10 @@ const TenantApps = () => {
         {error && <p className="text-red-500">{error}</p>}
 
         <ul className="w-[95%]">
-          {categories.map((category) => (
+          {categories
+          .slice()
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((category) => (
             <li
               key={category._id} // Ensure key is unique
               className={`w-full flex justify-between items-center p-3 my-2 rounded-md cursor-pointer ${
@@ -93,7 +96,10 @@ const TenantApps = () => {
         {selectedCategory ? (
           tenants.length > 0 ? (
             <ul className="w-[95%]">
-              {tenants.map((tenant) => (
+              {tenants
+              .slice()
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((tenant) => (
                 <li
                   key={tenant._id}
                   className={`w-full flex flex-row justify-center items-center p-3 my-2 rounded-md cursor-pointer ${

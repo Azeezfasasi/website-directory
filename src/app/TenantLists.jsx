@@ -20,7 +20,10 @@ const TenantList = () => {
 
         {/* Tenants Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tenants.map((tenant) => (
+          {tenants
+          .slice()
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map((tenant) => (
             <div
               key={tenant._id}
               className="p-5 border rounded-lg shadow-sm bg-white dark:bg-gray-800 transition hover:shadow-md"

@@ -108,7 +108,10 @@ const ManageUsers = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {currentActiveUsers.map((user) => (
+                    {currentActiveUsers
+                    .slice()
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((user) => (
                       <tr key={user._id} className="border-b border-gray-200">
                         <td className="px-6 py-4 text-gray-900 dark:text-gray-200">{user.name}</td>
                         <td className="px-6 py-4 text-gray-900 dark:text-gray-200">{user.email}</td>
@@ -177,7 +180,10 @@ const ManageUsers = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {currentDisabledUsers.map((user) => (
+                    {currentDisabledUsers
+                    .slice()
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                    .map((user) => (
                       <tr key={user._id} className="border-b border-gray-200">
                         <td className="px-6 py-4">{user.name}</td>
                         <td className="px-6 py-4">{user.email}</td>
