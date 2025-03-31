@@ -64,7 +64,7 @@ const TenantApps = () => {
   return (
     <div className="w-full flex flex-col lg:flex-row justify-center h-[100vh] lg:h-screen p-4 bg-white">
       {/* Tenant Categories */}
-      <div className="tenant-scroll flex flex-col justify-start items-start w-[95%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0 relative">
+      <div className="tenant-scroll flex flex-col justify-start items-start w-[99%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0 relative">
         <h2 className="bg-white sticky top-0 w-[95%] text-xl font-bold mb-4 pb-1 lg:pb-0 border-b border-solid border-gray-400 lg:border-none">Website Categories</h2>
 
         {loading && <p className="text-gray-500">Loading categories...</p>}
@@ -88,8 +88,8 @@ const TenantApps = () => {
       </div>
 
       {/* Tenants Section */}
-      <div className="tenant-scroll flex flex-col justify-start items-start w-[95%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0 relative">
-        <h2 className="bg-white sticky top-0 w-[95%] text-xl font-bold mb-4 pb-1 lg:pb-0 border-b border-solid border-gray-400 lg:border-none border">Website Types</h2>
+      <div className="tenant-scroll flex flex-col justify-start items-start w-[99%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0 relative">
+        <h2 className="bg-white sticky top-0 w-[95%] text-xl font-bold mb-4 pb-1 lg:pb-0 border-b border-solid border-gray-400 lg:border-none">Website Types</h2>
         {selectedCategory ? (
           tenants.length > 0 ? (
             <ul className="w-[95%]">
@@ -118,7 +118,7 @@ const TenantApps = () => {
       </div>
 
       {/* Apps Section */}
-      <div className="flex flex-col justify-start items-start w-[95%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0">
+      <div className="flex flex-col justify-start items-start w-[99%] lg:w-[30%] h-[290px] lg:h-[90%] pl-[20px] lg:mt-0">
         <h2 className="w-[95%] text-xl font-bold mb-4 pb-1 lg:pb-0 border-b border-solid border-gray-400 lg:border-none">Version</h2>
         {selectedTenant ? (
           apps.length > 0 ? (

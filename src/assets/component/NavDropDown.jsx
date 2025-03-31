@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDownIcon } from 'lucide-react';
+import { useProfile } from '../contextAPI/ProfileContext';
 
 const NavDropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { logout } = useProfile();
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -20,6 +22,11 @@ const NavDropdownMenu = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const handleLogout = () => {
+    logout();
+    window.location.href = '/';
+  };
+
   return (
     <div className="relative" ref={dropdownRef}>
       <button
@@ -30,7 +37,7 @@ const NavDropdownMenu = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg animate-fadeIn z-[9999]">
+        <div className="absolute left-0 lg:left-[-30px] right-0 lg:right-7 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-lg animate-fadeIn z-[9999]">
           <ul className="py-2">
             <li>
               <Link to="/app/home" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Website Directory</Link>
@@ -54,13 +61,16 @@ const NavDropdownMenu = () => {
               <Link to="/app/addtenantapp" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Create Apps</Link>
             </li>
             <li>
-              <Link to="" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Profile</Link>
+              <Link to="/app/profiledetails" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Profile Details</Link>
             </li>
             <li>
-              <Link to="/settings" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Settings</Link>
+              <Link to="/app/manageusers" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Manage Users</Link>
             </li>
             <li>
-              <Link to="/logout" className="block px-4 py-2 text-red-600 hover:bg-gray-100">Logout</Link>
+              <Link to="/app/addnewuser" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Add a New User</Link>
+            </li>
+            <li>
+              <div onClick={handleLogout} className="block px-4 py-2 text-red-600 hover:bg-gray-100 cursor-pointer">Logout</div>
             </li>
           </ul>
         </div>

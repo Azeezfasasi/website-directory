@@ -1,33 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function LoginCopy() {
   const [copySuccess, setCopySuccess] = useState('');
   const [copyPasswordSuccess, setCopyPasswordSuccess] = useState('');
 
-  const copyToClipboard = (text, setSuccess) => {
-    navigator.clipboard.writeText(text).then(() => {
+  const copyToClipboard = async (text, setSuccess) => {
+    try {
+      await navigator.clipboard.writeText(text);
       setSuccess(`${text === 'admin' ? 'Username' : 'Password'} copied to clipboard!`);
-    }, () => {
+      setTimeout(() => setSuccess(''), 2000); // Clears message after 2s
+    } catch (error) {
       setSuccess("Failed to copy text.");
-    });
+    }
   };
+  
 
   return (
-    <>
-    <div className='w-[330px] mt-[20px] bg-[bisque] border border-solid border-[#185519] rounded-[10px] py-[10px] px-[20px]'>
-        <p className='text-[#185519] text-[18.72px] font-bold my-[10px]'>Use below credential for testing</p>
-        {/* Username text */}
-        <p className='text-[#185519] font-bold mb-[10px]'>Username: <span className='font-normal text-black'>admin</span></p>
-        <button onClick={() => copyToClipboard("admin", setCopySuccess)} className="bg-[#185519] border-none rounded-[5px] text-white cursor-pointer text-[10px] px-[7px] py-[5px] mb-[10px]">Copy Username</button>
-        {copySuccess && <span className="text-blue-700 text-[14px] ml-[10px]">{copySuccess}</span>}
+    <div className="w-full max-w-sm bg-white shadow-lg border border-gray-200 rounded-lg p-2 mt-6 text-center">
+      <h3 className="text-lg font-semibold text-gray-700 mb-2">Use these demo credentials for testing</h3>
 
-        {/* Password text */}
-        <p className='text-[#185519] font-bold mb-[10px]'>Password: <span className='font-normal text-black'>pass1234</span></p>
-        <button onClick={() => copyToClipboard("pass1234", setCopyPasswordSuccess)} className="bg-[#185519] border-none rounded-[5px] text-white cursor-pointer text-[10px] px-[7px] py-[5px]">Copy Password</button>
-        {copyPasswordSuccess && <span className="text-blue-700 text-[14px] ml-[10px]">{copyPasswordSuccess}</span>}
+      {/* Username Section */}
+      <div className="mb-4">
+        <p className="text-gray-600 font-medium">
+          Username: <span className="font-normal text-black">demo@webdirectory.com</span>
+        </p>
+        <button
+          onClick={() => copyToClipboard("admin", setCopySuccess)}
+          className="mt-2 bg-green-600 text-white text-sm px-4 py-1 rounded-lg hover:bg-green-700 transition cursor-pointer"
+        >
+          Copy Username
+        </button>
+        {copySuccess && <span className="block text-sm text-blue-600 mt-2">{copySuccess}</span>}
+      </div>
+
+      {/* Password Section */}
+      <div>
+        <p className="text-gray-600 font-medium">
+          Password: <span className="font-normal text-black">demo1234</span>
+        </p>
+        <button
+          onClick={() => copyToClipboard("pass1234", setCopyPasswordSuccess)}
+          className="mt-2 bg-green-600 text-white text-sm px-4 py-1 rounded-lg hover:bg-green-700 transition"
+        >
+          Copy Password
+        </button>
+        {copyPasswordSuccess && <span className="block text-sm text-blue-600 mt-2">{copyPasswordSuccess}</span>}
+      </div>
     </div>
-    </>
-  )
+  );
 }
 
-export default LoginCopy
+export default LoginCopy;

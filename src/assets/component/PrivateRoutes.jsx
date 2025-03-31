@@ -12,7 +12,7 @@ const PrivateRoutes = ({ allowedRoles }) => {
 
   if (!allowedRoles.includes(user.role)) {
     // Redirect to unauthorized page if role is not allowed
-    return <Navigate to="/unauthorized" />;
+    return <Navigate to="/" />;
   }
 
   // Allow access to protected routes

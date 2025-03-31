@@ -15,6 +15,11 @@ import EditCategory from "./app/EditCategory";
 import EditTenant from "./app/EditTenant";
 import TenantApps from "./app/TenantApps";
 import EditApp from "./app/EditApp";
+import Register from "./app/Register";
+import ProfileDetails from "./app/ProfileDetails";
+import ManageUsers from "./app/ManageUsers";
+import AddNewUser from "./app/AddNewUser";
+import EditUserDetails from "./app/EditUserDetails";
 
 function App() {
 
@@ -26,10 +31,14 @@ function App() {
             {/* Public Routes */}
             <Route path="/" element={<Login/>}/>
             <Route path="*" element={<NotFoundPage />} />
+            <Route path="/app/register" element={<Register />} />
 
             {/* Protected Routes */}
             <Route element={<PrivateRoutes allowedRoles={["Admin", "Viewer"]} />}>
               <Route path="/app/home" element={<Home />} />
+            </Route>
+            <Route element={<PrivateRoutes allowedRoles={["Admin", "Viewer"]} />}>
+              <Route path="/app/profiledetails" element={<ProfileDetails />} />
             </Route>
             <Route element={<PrivateRoutes allowedRoles={["Admin"]} />}>
               <Route path="/app/dashboard" element={<Dashboard />} />
@@ -66,6 +75,15 @@ function App() {
             </Route>
             <Route element={<PrivateRoutes allowedRoles={["Admin"]} />}>
               <Route path="/app/editapp/:appId" element={<EditApp />} />
+            </Route>
+            <Route element={<PrivateRoutes allowedRoles={["Admin"]} />}>
+              <Route path="/app/manageusers" element={<ManageUsers />} />
+            </Route>
+            <Route element={<PrivateRoutes allowedRoles={["Admin"]} />}>
+              <Route path="/app/addnewuser" element={<AddNewUser />} />
+            </Route>
+            <Route element={<PrivateRoutes allowedRoles={["Admin"]} />}>
+              <Route path="/app/edituserdetails/:id" element={<EditUserDetails />} />
             </Route>
           </Routes>
         </Router>

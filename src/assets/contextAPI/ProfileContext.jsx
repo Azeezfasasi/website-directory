@@ -6,12 +6,17 @@ const ProfileContext = createContext();
 export const useProfile = () => useContext(ProfileContext);
 
 export const ProfileProvider = ({ children }) => {
-  // const [user, setUser] = useState(null);
   const [user, setUser] = useState(() => {
-    // Retrieve user from localStorage if available
-    const storedUser = localStorage.getItem("user");
-    return storedUser ? JSON.parse(storedUser) : null;
+    try {
+      const storedUser = localStorage.getItem("user");
+      return storedUser ? JSON.parse(storedUser) : null;
+    } catch (error) {
+      console.error("Error parsing stored user data:", error);
+      localStorage.removeItem("user"); // Clear invalid data
+      return null;
+    }
   });
+  
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [loading, setLoading] = useState(false);
 
@@ -97,18 +102,24 @@ export const ProfileProvider = ({ children }) => {
   };
 
   // Update profile
-  const updateProfile = async (userId, profileData) => {
+  const updateProfile = async (userId, updatedData) => {
     try {
-      setLoading(true);
-      const response = await axios.put(`https://app-directory-backend.onrender.com/api/profiles/${userId}`, profileData);
-      setUser(response.data.updatedProfile);
+      const response = await axios.put(
+        `https://app-directory-backend.onrender.com/api/profiles/${userId}`,
+        updatedData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
-      throw error.response?.data || error.message;
-    } finally {
-      setLoading(false);
+      console.error("Error updating user:", error);
+      throw error;
     }
   };
+  
 
   // Delete profile
   const deleteProfile = async (userId) => {
@@ -129,6 +140,26 @@ export const ProfileProvider = ({ children }) => {
     setToken('');
   };
 
+  // Admin: Add a new user
+const addUserByAdmin = async (userData) => {
+  try {
+    setLoading(true);
+    const response = await axios.post(
+      "https://app-directory-backend.onrender.com/api/profiles/admin/add-user",
+      userData,
+      {
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    throw error.response?.data || error.message;
+  } finally {
+    setLoading(false);
+  }
+};
+
+
   return (
     <ProfileContext.Provider
       value={{
@@ -140,6 +171,7 @@ export const ProfileProvider = ({ children }) => {
         updateProfile,
         deleteProfile,
         logout,
+        addUserByAdmin,
       }}
     >
       {children}
